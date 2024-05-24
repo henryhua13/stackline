@@ -31,7 +31,7 @@ const formatter = new Intl.NumberFormat('en-US', {
 function convertDate(dateStr: string) {
     let date = new Date(dateStr);
     let month = date.getMonth() + 1;
-    return (month < 10 ? "0" : "") + month + '-' + date.getDate() + '-' + date.getFullYear();
+    return (month < 10 ? "0" : "") + month + '-' + date.getDate() + '-' + (date.getFullYear() % 100);
 }
 
 const columns: readonly Column[] = [
